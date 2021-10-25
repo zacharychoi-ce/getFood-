@@ -4,19 +4,6 @@ const db = require('../db/items')
 
 const router = express.Router()
 
-router.get('/item', (req, res) => {
-  const id = req.body.id
-  db.getItemsById(id)
-    .then(item => {
-      res.json(item[0].user_id)
-      return null
-    })
-    .catch(err => {
-      console.log(err)
-      res.status(500).json({ message: 'Unable to get items' })
-    })
-})
-
 router.get('/', (req, res) => {
   db.getItems()
     .then(results => {
@@ -29,6 +16,20 @@ router.get('/', (req, res) => {
           title: 'Unable to get items'
         }
       })
+    })
+})
+
+// GET by id
+router.get('/item', (req, res) => {
+  const id = req.body.id
+  db.getItemsById(id)
+    .then(item => {
+      res.json(item[0].user_id)
+      return null
+    })
+    .catch(err => {
+      console.log(err)
+      res.status(500).json({ message: 'Unable to get items' })
     })
 })
 
