@@ -5,7 +5,7 @@ Kris, Koko, Kritika, Rodrigo, Zac
 Digital Wireframe:
 https://whimsical.com/getfood-JfoEWmZzgLJTabRX5iejtA
 
-Deployed?! (cheeeeeeers Kris!):
+Deployed?:
 https://getfoodeda.herokuapp.com/
 
 ## Setup 
